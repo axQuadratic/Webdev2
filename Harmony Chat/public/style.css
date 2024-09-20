@@ -1,0 +1,24 @@
+#spacer {
+    padding-bottom: 30px;
+}
+
+#messages {
+    border: 3px black;
+    border-style: solid;
+}
+
+#messageadd {
+    width: 95%;
+    height: 30px;
+}
+
+#send {
+    width: 4%;
+    height: 30px;
+}
+
+.box {
+    border: 1px gray;
+    border-style: solid;
+    background-color: lightgray;
+}

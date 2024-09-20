@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'synnova_bold';
+    src: url('assets/synnova-bold-webfont.woff2') format('woff2'),
+         url('assets/synnova-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    margin-top: 20px;
+    font-family: "Comic Sans MS";
+}
+
+#logo {
+    font-family: 'synnova_bold';
+    border: none;
+    background-color: white;
+    font-size: 25px;
+}
+
+#nav_but_cont {
+    width: 45%;
+    margin-right: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_button {
+    padding: 15px;
+    width: 80px;
+    background-color: white;
+}
+
+#content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#lipsum {
+    margin-left: 45px;
+}
+
+#music_container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 40% 40%;
+    gap: 20px;
+}
+
+.entry {
+    width: 350px;
+    height: 250px;
+}
