@@ -1,24 +1,113 @@
-#spacer {
-    padding-bottom: 30px;
+.ubuntu-light {
+    font-family: "Ubuntu", system-ui;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.ubuntu-regular {
+    font-family: "Ubuntu", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ubuntu-medium {
+    font-family: "Ubuntu", system-ui;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.ubuntu-bold {
+    font-family: "Ubuntu", system-ui;
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    background-color: #202020;
+    background-image: none;
+}
+
+h1, h2, h3, b, p {
+    color: white;
 }
 
 #messages {
-    border: 3px black;
-    border-style: solid;
+    border: 1px white;
+    border-style: none;
 }
 
 #messageadd {
     width: 95%;
+    max-width: calc(100% - 60px);
     height: 30px;
 }
 
-#send {
+#send_message {
     width: 4%;
     height: 30px;
+    min-width: 40px;
+}
+
+#info_container {
+    border: 3px white;
+    border-style: solid;
+    background-color: transparent;
+    padding-bottom: 20px;
+}
+
+#user_input, #server_input {
+    width: 90%;
 }
 
 .box {
-    border: 1px gray;
+    border: 1px white;
     border-style: solid;
-    background-color: lightgray;
+    background-color: #353535;
+    background-image: url("images/tree.png");
+    background-attachment: fixed;
+    background-size: 1800px 1000px;
+}
+
+.messageuser, .messagebody, .messagetime {
+    margin-left: 5px;
+    overflow-wrap: break-word;
+}
+
+.messageuser {
+    font-family: "Ubuntu", system-ui;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.messagetime {
+    font-family: "Ubuntu", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+button {
+    background-color: white;
+}
+
+@media only screen and (min-width: 600px) {
+    #info_container {
+        float: right;
+        margin-top: -5%;
+        margin-bottom: 10px;
+        padding-right: 20px;
+        background-color: #353535;
+    }
+
+    #spacer {
+        padding-bottom: 30px;
+    }
+
+    #user_input, #server_input {
+        width: 100%;
+    }
+
+    body {
+        background-attachment: fixed;
+        background-size: 100% 30%;
+    }
 }

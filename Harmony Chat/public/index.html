@@ -5,20 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harmony</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="import" href="messagebox.html">
+    <link rel="stylesheet" href="style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Harmony Chat™</h1>
-    <p>by QUADRATIC</p>
+    <nav>
+        <h1 class="ubuntu-bold">Harmony Chat™</h1>
+        <p class="ubuntu-medium" id="powered-by">powered by BARACK OBAMA</p>
+        <div id="info_container">
+            <h3>Server address:</h3>
+            <input id="server_input" type="text", maxlength="30", placeholder="Input an address..." value="localhost:8181">
+            <h3>Username:</h3>
+            <input id="user_input" type="text", maxlength="30", placeholder="Input...">
+        </div>
+    </nav>
 
     <main>
         <div id="spacer"></div>
-        <h2>Latest Messages:</h2>
-        <div id="messages">
+        <h3 class="ubuntu-medium">Latest Messages:</h3>
+        <div>
             <input id="messageadd" type="text" maxlength="255", placeholder="Input a message...">
-            <button id="send">Send</button>
+            <button id="send_message" class="ubuntu-light" onclick="sendMessage()">Send</button>
             <!-- Messages go here... -->
+            <div id="messages">No messages found. There may not be a server at this address.</div>
         </div>
     </main>
 </body>
