@@ -60,7 +60,7 @@ nav {
 }
 
 .side-image {
-    width: 70%;
+    width: 90%;
     height: 40%;
 }
 
@@ -70,7 +70,7 @@ nav {
 
 #footer {
     width: 100%;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
     background-color: #D61D24;
 }
 
@@ -87,4 +87,25 @@ nav {
     margin-left: 10%;
     margin-right: 10%;
     font-size: 1.1rem;
+}
+
+.footer-link {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.1rem;
+    padding-bottom: 20px;
+}
+
+#footer_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    min-width: 20%;
 }
