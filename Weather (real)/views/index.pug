@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Gen Alpha Weather
+        link(rel="stylesheet", href="style.css")
+        link(rel="icon", type="image/x-icon", href="icon.png")
+    nav
+        div(id="header")
+            h1 Gen Alpha Weather Services
+
+    - var temperatures = []
+    each item in weather 
+        each data, time in item 
+            - temperatures.push(data.main.temp)
+    
+    - var tempAverage = 0
+    each temperature in temperatures
+        - tempAverage += temperature
+    - tempAverage /= temperatures.length
+    if tempAverage > 273
+        body(id="body-hot")
+            include weather_body.pug
+    else
+        body(id="body-cold")
+            include weather_body.pug 

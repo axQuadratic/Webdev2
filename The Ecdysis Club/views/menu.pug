@@ -1,0 +1,23 @@
+doctype html
+- var categories = []
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Ecdysis Web Shop
+        link(rel="icon", href="grail_icon.png")
+        link(rel="stylesheet", href="style.css")
+        script(src="script.js")
+    body
+        nav
+            img(src="grail.png", alt="The Ecdysis Club")
+            each item in items
+                unless categories.includes(item.category)
+                    - categories.push(item.category)
+                    button(class="category-button", onclick=`scrollToCategory('${item.category}')`)=item.category
+        main
+            img(src="cart.png", alt="Shopping Cart", id="cart-button")
+            h1 Menu
+            each category in categories
+                h2(id=category)=category
+                include category_box.pug

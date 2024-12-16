@@ -1,0 +1,12 @@
+body {
+    min-height: 100%;
+    margin: 20px;
+    font-family: Helvetica, sans-serif;
+    background-image: url(chamber.png);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+h1, h2, p, #password-label {
+    color: white;
+}

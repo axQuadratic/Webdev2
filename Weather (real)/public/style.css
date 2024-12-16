@@ -1,0 +1,86 @@
+body {
+    font-family: "Segoe UI";
+    margin-top: 0px;
+}
+
+#body-cold {
+    background: radial-gradient(circle, rgba(154,255,252,1) 0%, rgba(255,255,255,1) 80%);
+}
+
+#body-hot {
+    background: radial-gradient(circle, rgba(255,218,154,1) 0%, rgba(255,255,255,1) 80%);
+}
+
+nav {
+    background: white;
+    margin-top: 0px;
+}
+
+#header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 3px black solid;
+}
+
+h2 {
+    margin-bottom: 0px;
+    margin-left: 5px;
+}
+
+#weather-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.weather-subcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-box {
+    background-color: white;
+    border: 3px black solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.weather-data-container {
+    margin-left: 5px;
+}
+
+.image {
+    height: 75px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.hot {
+    color: red;
+}
+
+.cold {
+    color: blue;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #weather-container {
+        flex-direction: column;
+    }
+
+    #body-cold {
+        background: linear-gradient(180deg, rgba(154,255,252,1) 0%, rgba(255,255,255,1) 80%);
+    }
+    
+    #body-hot {
+        background: linear-gradient(180deg, rgba(255,218,154,1) 0%, rgba(255,255,255,1) 80%);
+    }
+}

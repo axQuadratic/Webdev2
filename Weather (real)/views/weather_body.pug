@@ -1,0 +1,14 @@
+div(id="weather-container")
+    each item in weather
+        div(class="weather-subcontainer")
+            h2= Object.keys(item)[0].split(",")[0]
+
+            each data, time in item
+                div(class="weather-box", id="bg" + (Math.floor(Math.random() * 8) + 1))
+                    div(class="weather-data-container")
+                        b= time.split(",")[1].slice(0, time.split(",")[1].length - 3)
+                        if Math.round((data.main.temp - 273) * 10) / 10 > 0
+                            h2(class="hot" title="Min: " + Math.round((data.main.temp_min - 273) * 10) / 10 + "°C\nMax: " + Math.round((data.main.temp_min - 273) * 10) / 10 + "°C")= Math.round((data.main.temp - 273) * 10) / 10 + "°C"
+                        else 
+                            h2(class="cold" title="Min: " + Math.round((data.main.temp_max - 273) * 10) / 10 + "°C\nMax: " + Math.round((data.main.temp_min - 273) * 10) / 10 + "°C")= Math.round((data.main.temp - 273) * 10) / 10 + "°C"
+                    img(class="image", src="weather/" + data.weather[0].main + ".png", alt=data.weather[0].main, title="Humidity: " + data.main.humidity + "%\nPressure: " + data.main.pressure + " kPa")

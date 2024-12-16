@@ -1,0 +1,10 @@
+div(class="category-box")
+    each item in items
+        if item.category == category
+            div(class="food-box")
+                img(src=item.image_path, alt=item.name, class="food-image")
+                div(class="box-text")
+                    h3(class="box-header")= item.name
+                    p(class="description")= item.description
+                    b= item.price + "p "
+                button(class="order-button") +

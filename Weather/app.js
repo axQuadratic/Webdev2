@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
-const PORT = 8181
+const PORT = 8181;
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended : false }));
 app.use(express.json());
-app.set("view engine", "pug")
+app.set("view engine", "pug");
 
 app.get("/", function(req, res) { 
     res.redirect("/dog");
@@ -20,9 +20,9 @@ app.get("/dog", function(req, res) {
         ],
         image: "dog.png",
         other: "lang"
-    }
+    };
     
-    res.render("index", data)
+    res.render("index", data);
 });
 
 app.get("/lang", function(req, res) {
@@ -34,11 +34,11 @@ app.get("/lang", function(req, res) {
         ],
         image: "eng.png",
         other: "dog"
-    }
+    };
 
-    res.render("index", data)
+    res.render("index", data);
 });
 
 app.listen(PORT, function() {
-    console.log("NGO Weather Services active; ready for requests at " + PORT)
+    console.log("NGO Weather Services active; ready for requests at " + PORT);
 });

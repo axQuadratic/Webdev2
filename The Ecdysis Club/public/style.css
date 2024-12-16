@@ -1,0 +1,107 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0px;
+    font-family: Helvetica, sans-serif;
+}
+
+nav {
+    background-color: #D43A28;
+    display: flex;
+    justify-content: flex-start;
+}
+
+main {
+    min-height: calc(100% - 100px);
+    padding-top: 10px;
+    background-image: url("chamber.png");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+h1, h2 {
+    color: white;
+}
+
+.category-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.category-button {
+    margin-left: 50px;
+    width: 130px;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 1.4rem;
+    color: white;
+    font-weight: bold;
+}
+
+.category-button:hover {
+    text-decoration: underline;
+}
+
+#cart-button {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    margin-right: 30px;
+}
+
+.food-box {
+    width: 26%;
+    border: 1px black solid;
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 2%;
+    height: 130px;
+    margin-bottom: 1%;
+}
+
+.box-header {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.box-text {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.food-image {
+    border-radius: 3px;
+}
+
+.description {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 0.8rem;
+}
+
+.order-button {
+    font-size: 15px;
+    font-weight: bolder;
+    background-color: #D43A28;
+    border: none;
+    border-left: 1px black solid;
+    border-radius: 3px;
+}
+
+.order-button:hover {
+    color: white;
+}
+
+#padder {
+    margin-bottom: 100%;
+}

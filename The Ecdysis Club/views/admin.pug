@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title The Invisible Serapeum
+        link(rel="stylesheet", href="admin_style.css")
+        script(src="add_item.js") 
+    body 
+        h1 THE STAG DOOR OPENS
+        input(type="text", id="category", placeholder="Category")
+        input(type="text", id="name", placeholder="Name")
+        input(type="text", id="price", placeholder="Price")
+        input(type="text", id="img_path", placeholder="Image Path")
+        input(type="text", id="description", placeholder="Description")
+        button(onclick="addItem()") Add This Item
