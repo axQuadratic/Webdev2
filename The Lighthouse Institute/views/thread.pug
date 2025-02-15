@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= category.name + ": " + thread.title + " | The Lighthouse Institute"
+        link(rel="stylesheet", href="/style.css")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.googleapis.com", crossorigin)
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Forum&display=swap")
+        link(rel="icon", href="/images/secretary-persistent.png")
+
+    body
+        div(id="main")
+            div(id="top-bar")
+                img(id="header-image" src="/images/secretary-persistent.png", onclick="window.location.href = '/home'")
+                h1(id="title") The Lighthouse Institute
+            hr(class="top-divider")
+
+            div(id="category-header", onclick=`window.location.href = '/category/${category.id}'`)
+                h2(class="header-title")= category.name
+                p(class="header-item")= category.description
+            div(id="post-header")
+                h2(class="header-item")= thread.title
+
+            for post in posts
+                if thread.thread_id === post.thread
+                    div(class="post-container")
+                        div(class="post-user-container")
+                            div(class="post-user-container-inner")
+                                h3= post.username
+                            div(class="user-image-container")
+                                img(class="user-image", src=`/images/users/${post.iconpath}.png`)
+                        div(class="post-body-container")
+                            p(class="post-body")= post.body
+                            p(class="user-bio")= post.bio
+
+        include footer.pug
