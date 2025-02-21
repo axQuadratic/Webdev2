@@ -9,6 +9,7 @@ html(lang="en")
         link(rel="preconnect", href="https://fonts.googleapis.com", crossorigin)
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Forum&display=swap")
         link(rel="icon", href="/images/secretary-persistent.png")
+        script(src="create-account.js", defer) 
 
     body
         div(id="main")
@@ -17,9 +18,13 @@ html(lang="en")
                 h1(id="title") The Lighthouse Institute
             hr(class="top-divider")
         
-            input
-            input
-            input
-            button ENTER
+            div(id="post-header")
+                h2(class="header-item") Join the Institute
+            div(id="login-container")
+                input(id="username-entry", class="login-entry", placeholder="Username")
+                input(id="password-entry", class="login-entry", placeholder="Password", type="password")
+                input(id="repeat-password-entry", class="login-entry", placeholder="Repeat Password", type="password")
+                button(id="confirm-button", onclick="createAccount()") ENTER
+            p(id="error-label")
 
         include footer.pug

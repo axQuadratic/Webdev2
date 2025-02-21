@@ -163,3 +163,34 @@ h1, h2 {
     margin-left: auto;
     margin-right: auto;
 }
+
+#login-container {
+    margin-top: 5%;
+    border: 1px solid gray;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.login-entry {
+    height: 50px;
+    font-family: "Forum", serif;
+    font-size: 24px;
+}
+
+#confirm-button {
+    font-family: "belgrad", serif;
+    font-size: 24px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+}
+
+#error-label {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}

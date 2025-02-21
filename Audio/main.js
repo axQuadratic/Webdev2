@@ -157,7 +157,7 @@ function createWindow() {
     win.loadFile("base.html");
 }
 
-async function renderPage(event, page) {
+async function renderPage(event, page, targetAlbum = null) {
     function getAllTracks() {
         return new Promise((resolve, reject) => {
             db.all(getTracksSQL, function(err, row) {
@@ -167,7 +167,13 @@ async function renderPage(event, page) {
             });
         });
     }
-    let getTracksSQL = "SELECT music.id AS track_id, albums.id AS album_id, artists.id AS artist_id, * FROM music INNER JOIN albums ON albums.id = music.album INNER JOIN artists ON artists.id = albums.artist"
+    let getTracksSQL = ""
+    if (targetAlbum === null) {
+        getTracksSQL = "SELECT music.id AS track_id, albums.id AS album_id, artists.id AS artist_id, * FROM music INNER JOIN albums ON albums.id = music.album INNER JOIN artists ON artists.id = albums.artist"
+    }
+    else {
+        getTracksSQL = `SELECT music.id AS track_id, albums.id AS album_id, artists.id AS artist_id, * FROM music INNER JOIN albums ON albums.id = music.album INNER JOIN artists ON artists.id = albums.artist WHERE album_id = ${targetAlbum}`
+    }
     let targetFile = page + ".pug";
     let tracks = await getAllTracks();
     return pug.renderFile(targetFile, {music: tracks});

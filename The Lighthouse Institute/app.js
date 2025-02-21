@@ -115,6 +115,26 @@ app.get("/createaccount", function(req, res) {
     res.render("account-creation.pug");
 });
 
+app.post("/ghirbi", function(req, res) {
+    switch (req.body.operation) {
+        case "newuser":
+            let currentTime = new Date();
+            let timeString = `${currentTime.getFullYear()}-${currentTime.getMonth()}-${currentTime.getDate()} ${currentTime.getHours()}:${currentTime.getMinutes()}`;
+            db.serialize(function() {
+                db.all(sql.createUser(), [req.body.username, req.body.password, timeString, null, null], function(err, row) {
+                    if (err) console.log(err);
+                    console.log(row);
+                });
+            });
+
+            break;
+    
+        default:
+            
+            break;
+    }
+});
+
 app.listen(PORT, function() {
     console.log("The Heart Relentless beats once more to protect the skin of the server we understand.");
 });

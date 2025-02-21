@@ -1,5 +1,5 @@
-async function changePage(page) {
-    boilerplate.innerHTML = await window.electronAPI.requestPageData(page);
+async function changePage(page, targetAlbum) {
+    boilerplate.innerHTML = await window.electronAPI.requestPageData(page, targetAlbum);
 }
 
 let boilerplate = document.getElementsByClassName("app")[0];
