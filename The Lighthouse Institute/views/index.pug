@@ -22,4 +22,13 @@ html(lang="en")
                         h3= category.name
                         p= category.description
 
+        div(id="logged-in-as", class="category-button")
+            if active_user.iconpath != null
+                img(src=`images/users/${active_user.username}.png`, alt=active_user.username, class="user-image-small")
+            else 
+                img(src="images/users/default.png", alt=active_user.username, class="user-image-small")
+            div(id="logged-in-as-inner")
+                p(class="logged-in-as-text") Logged in as:
+                h3(class="logged-in-as-text")= active_user.username
+
         include footer.pug

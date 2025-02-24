@@ -179,6 +179,9 @@ h1, h2 {
     height: 50px;
     font-family: "Forum", serif;
     font-size: 24px;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #confirm-button {
@@ -187,6 +190,31 @@ h1, h2 {
     color: white;
     background-color: black;
     border-radius: 5px;
+}
+
+#logged-in-as {
+    position: absolute;
+    top: 10px; left: calc(100vw - 320px);
+    width: 300px;
+    height: 60px;
+}
+
+#logged-in-as-inner {
+    margin-right: 10px;
+    align-content: center;
+}
+
+.logged-in-as-text {
+    margin: 0px;
+}
+
+.user-image-small {
+    display: block;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    margin: auto;
+    margin-left: 10px;
 }
 
 #error-label {

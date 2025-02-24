@@ -19,12 +19,11 @@ html(lang="en")
             hr(class="top-divider")
         
             div(id="post-header")
-                h2(class="header-item") Join the Institute
+                h2(class="header-item") Verify your Identity
             div(id="login-container")
                 input(id="username-entry", class="login-entry", placeholder="Username", maxlength=25)
                 input(id="password-entry", class="login-entry", placeholder="Password", type="password", maxlength=25)
-                input(id="repeat-password-entry", class="login-entry", placeholder="Repeat Password", type="password", maxlength=25)
-                button(id="confirm-button", onclick="createAccount()") ENTER
+                button(id="confirm-button", onclick="login()") ENTER
             p(id="error-label")
 
         include footer.pug

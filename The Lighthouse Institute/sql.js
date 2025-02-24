@@ -34,6 +34,7 @@ const getAllPosts = `SELECT threads.id AS thread_id, * FROM posts INNER JOIN use
 const createPost = `INSERT INTO posts(thread, postauthor, body, timestamp) VALUES (?, ?, ?, ?)`;
 
 const getAllUsers = `SELECT * FROM users`;
+const getUserCredentials = `SELECT * FROM users WHERE username = ?`
 const createUser = `INSERT INTO users(username, password, joindate, bio, iconpath) VALUES (?, ?, ?, ?, ?)`;
 
 module.exports.createUserTable = () => { return createUserTable; };
@@ -53,4 +54,5 @@ module.exports.getAllPosts = () => { return getAllPosts; };
 module.exports.createPost = () => { return createPost; };
 
 module.exports.getAllUsers = () => { return getAllUsers; };
+module.exports.getUserCredentials = () => { return getUserCredentials };
 module.exports.createUser = () => { return createUser; };
