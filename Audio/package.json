@@ -12,6 +12,7 @@
     "electron": "^33.3.2"
   },
   "dependencies": {
+    "package.json": "^2.0.1",
     "pug": "^3.0.3",
     "sqlite3": "^5.1.7"
   }

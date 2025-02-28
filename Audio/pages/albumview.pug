@@ -1,0 +1,26 @@
+- let album = music[0].album_title
+- let coverArt = music[0].cover_path
+- let artist = music[0].name
+
+div(id="header-outer")
+    div(id="header")
+        div(id="header-inner", onclick="changePage('index')")
+            h1(id="title") neutron
+            b(id="title-2") audio
+            h1(id="title-3") | tracklist
+
+div(id="main")
+    each track in music
+        - let audioExtension = track.audio_path.substring(track.audio_path.lastIndexOf(".") + 1, track.audio_path.length);
+        if audioExtension === "mp3"
+            - let audioType = "audio/mpeg"
+        else if audioExtension === "ogg"
+            - let audioType = "audio/ogg"
+        else if audioExtension === "wav"
+            - let audioType = "audio/wav"
+        else
+            - let audioType = "invalid"
+        div(class="audio-box")
+            h2(class="audio-title")= track.title
+            p(class="audio-info", title=track.name + " • Released " + track.release_date + " • Format: " + audioType)= " • " + track.name + " • Released " + track.release_date + " • Format: " + audioExtension
+            audio(controls, src=`../assets/audio/${track.audio_path}`, type=audioType, class="player")

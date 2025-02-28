@@ -1,0 +1,22 @@
+- let albums = []
+
+div(id="header-outer")
+    div(id="header")
+        div(id="header-inner")
+            h1(id="title") neutron
+            b(id="title-2") audio
+            h1(id="title-3") | home
+
+div(id="main")
+    div(id="header-lower")
+        h3 Available Albums
+        button(onclick="changePage('entry')", class="main-button") Import...
+    div(id="album-container")
+        each track in music
+            unless track.album_title in albums
+                - albums.push(track.album_title)
+                div(class="album-box", onclick=`changePage('albumview', '${track.album}')`)
+                    img(class="cover-art", src="../assets/art/" + track.cover_path, alt=track.album_title)
+                    div(class="album-box-inner")
+                        h2(title=track.album_title)= track.album_title
+                        p(class="artist-name")= track.name

@@ -1,0 +1,32 @@
+script(src="renderer.js", defer) 
+
+div(id="header-outer")
+    div(id="header")
+        div(id="header-inner", onclick="changePage('index')")
+            h1(id="title") neutron
+            b(id="title-2") audio
+            h1(id="title-3") | submissions
+
+div(id="main")
+    form(action="", id="submission-form")
+        h3 Track Info
+        label(for="file-input") Audio File
+        input(type="button", id="file-input", class="main-button", value="Choose a file...")
+        label(for="title-input") Title
+        input(type="text", id="title-input")
+
+        h3 Album Info
+        p= "(match with existing album to append track)"
+        label(for="art-input") Cover File
+        input(type="button", id="art-input", class="main-button", value="Choose a file...")
+        label(for="album-input") Title
+        input(type="text", id="title-input")
+        label(for="release-input") Release Date
+        input(type="date", id="release-input")
+
+        h3 Artist Info 
+        label(for="artist-input") Name
+        input(type="text", id="artist-input")
+        label(for="bio-input")= "Bio (unused)"
+        input(type="text", id="bio-input")
+        input(type="button", value="SUBMIT", id="submit-button", class="main-button")

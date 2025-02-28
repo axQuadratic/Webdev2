@@ -1,5 +1,6 @@
 const { ipcMain, dialog } = require('electron');
 const { app, BrowserWindow } = require('electron/main');
+const { copyFile } = require("node:fs");
 const path = require('node:path');
 const sql = require("sqlite3").verbose();
 const pug = require("pug");
@@ -37,6 +38,9 @@ db.serialize(function() {
     db.all(createMusicTable, function(err, row) {
         if (err) console.error(err.message);
     });
+    /*
+    db.all("DELETE FROM artists WHERE id=3");
+    */
 });
 
 async function handleUpload(event, data) {
@@ -47,7 +51,6 @@ async function handleUpload(event, data) {
                     artistId = -1;
                 }
                 else {
-                    console.log(row)
                     artistId = row[0].id;
                 }
                 
@@ -56,7 +59,6 @@ async function handleUpload(event, data) {
                         albumId = -1;
                     }
                     else {
-                        console.log(row)
                         albumId = row[0].id;
                     }
                     
@@ -93,13 +95,17 @@ async function handleUpload(event, data) {
         });
     }
 
+    
     let audioPath = data.audioPath.substring(data.audioPath.lastIndexOf("\\") + 1, data.audioPath.length);
     let artPath = data.artPath.substring(data.artPath.lastIndexOf("\\") + 1, data.artPath.length);
+
+    copyFile(data.audioPath, `assets/audio/${audioPath}`, function(err) { if (err) throw err; });
+    copyFile(data.artPath, `assets/art/${artPath}`, function(err) { if (err) throw err; });
 
     let artistId = 0; let albumId = 0;
 
     let findArtist = `SELECT * FROM artists WHERE name = '${data.artist}';`;
-    let findAlbum = `SELECT * FROM albums WHERE album_title = '${data.album}';`
+    let findAlbum = `SELECT * FROM albums WHERE album_title = '${data.album}';`;
 
     let ids = await checkArtistOrAlbumExists();
     artistId = ids[0]; albumId = ids[1];
@@ -147,14 +153,15 @@ async function handleFileSelect(event, type) {
 
 function createWindow() {
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        icon: "assets/images/neutron.png",
+        width: 1200,
+        height: 900,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         }
     });
 
-    win.loadFile("base.html");
+    win.loadFile("pages/base.html");
 }
 
 async function renderPage(event, page, targetAlbum = null) {
@@ -169,12 +176,12 @@ async function renderPage(event, page, targetAlbum = null) {
     }
     let getTracksSQL = ""
     if (targetAlbum === null) {
-        getTracksSQL = "SELECT music.id AS track_id, albums.id AS album_id, artists.id AS artist_id, * FROM music INNER JOIN albums ON albums.id = music.album INNER JOIN artists ON artists.id = albums.artist"
+        getTracksSQL = "SELECT music.id AS track_id, albums.id AS album_id, artists.id AS artist_id, * FROM music INNER JOIN albums ON albums.id = music.album INNER JOIN artists ON artists.id = albums.artist ORDER BY album_title"
     }
     else {
         getTracksSQL = `SELECT music.id AS track_id, albums.id AS album_id, artists.id AS artist_id, * FROM music INNER JOIN albums ON albums.id = music.album INNER JOIN artists ON artists.id = albums.artist WHERE album_id = ${targetAlbum}`
     }
-    let targetFile = page + ".pug";
+    let targetFile = "pages/" + page + ".pug";
     let tracks = await getAllTracks();
     return pug.renderFile(targetFile, {music: tracks});
 }

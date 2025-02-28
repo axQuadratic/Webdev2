@@ -1,0 +1,162 @@
+body {
+    margin: auto;
+    background-color: #0a0a0a;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#main {
+    width: 85%;
+    margin: auto;
+    text-transform: capitalize;
+}
+
+#header-outer {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: calc(100% - 20px);
+    margin: auto;
+    margin-bottom: 10px;
+    height: 100px;
+    background: black;
+    border-radius: 7px;
+}
+
+#header {
+    width: 85%;
+    height: calc(100% - 10px);
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#header-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#header-lower {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#album-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#title, #title-3 {
+    color: inherit;
+    font-size: 3rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;
+    margin: auto;
+}
+
+#title-2 {
+    color: inherit;
+    font-size: 3rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    margin: auto;
+}
+
+#title-3 {
+    margin-left: 15px;
+}
+
+.album-box {
+    background-color: #131313;
+    display: flex;
+    flex-direction: row;
+    max-height: 110px;
+    border-radius: 7px;
+}
+
+.album-box-inner {
+    margin-left: 15px;
+    width: calc(100% - 105px);
+}
+
+.cover-art {
+    margin: 5px;
+    max-width: 100px;
+    width: auto;
+    height: 100px;
+    border-radius: 7px;
+}
+
+.main-button {
+    background-color: #131313;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 7px;
+}
+
+.artist-name {
+    font-size: 0.9rem;
+    color: #606060;
+}
+
+.audio-box {
+    background-color: #131313;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    border-radius: 7px;
+}
+
+.audio-title {
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.audio-info {
+    margin: auto;
+    margin-left: 0px;
+    color: #606060;
+    font-size: 0.9rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.player {
+    margin: auto;
+    margin-right: 10px;
+}
+
+#submission-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+#header-inner:hover {
+    color: #dadada;
+}
+
+.album-box:hover {
+    background-color: #202020;
+}
+
+.main-button:hover {
+    background-color: #202020;
+}
