@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title The Lore of the Invisible Arts: Append a Collection
+        link(rel="stylesheet", href="style.css")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap", rel="stylesheet")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Forum&display=swap")
+        link(rel="icon", href="thewisdomtree.png", type="image/png")
+        script(src="input.js", defer) 
+    body
+        div(id="header")
+            button(class="button", id="leave-button", onclick="window.location.href = '/'") Back
+            h1 Append a Collection
+            div(id="left-spacer")
+        hr
+
+        div(id="input-element-container")
+            div(class="input-container", id="no-remove")
+                input(type="text", class="input", id="name", placeholder="Collection Name")
+                input(type="text", class="input", id="author", placeholder="Collection Author")
+            div(class="input-container")
+                input(type="text", class="input", placeholder="Card Front")
+                input(type="text", class="input", placeholder="Card Back")
+
+        div(class="input-container")
+            button(class="input-button", onclick="addCardInput()") Add a Card
+            button(class="input-button", onclick="removeCardInput()") Remove a Card
+            button(class="input-button", onclick="submitCollection()") Submit

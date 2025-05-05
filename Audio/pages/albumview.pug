@@ -10,6 +10,11 @@ div(id="header-outer")
             h1(id="title-3") | tracklist
 
 div(id="main")
+    div(id="album-header")
+        img(src="../assets/art/" + coverArt, alt=album, id="album-header-art")
+        h1(class="audio-title", id="album-title")= album
+        h3(id="audio-header-info")= " • " + artist
+
     each track in music
         - let audioExtension = track.audio_path.substring(track.audio_path.lastIndexOf(".") + 1, track.audio_path.length);
         if audioExtension === "mp3"

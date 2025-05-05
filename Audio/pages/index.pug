@@ -10,10 +10,10 @@ div(id="header-outer")
 div(id="main")
     div(id="header-lower")
         h3 Available Albums
-        button(onclick="changePage('entry')", class="main-button") Import...
+        button(onclick="window.location.href = 'entry.html'", class="main-button") Import...
     div(id="album-container")
         each track in music
-            unless track.album_title in albums
+            unless albums.includes(track.album_title)
                 - albums.push(track.album_title)
                 div(class="album-box", onclick=`changePage('albumview', '${track.album}')`)
                     img(class="cover-art", src="../assets/art/" + track.cover_path, alt=track.album_title)

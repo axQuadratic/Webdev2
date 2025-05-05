@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'belgrad';
+    src: url('fonts/belgrad-webfont.woff2') format('woff2'),
+         url('fonts/belgrad-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    color: #C0B4A2;
+    height: 100vh;
+    background-image: url("tree.png");
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Philosopher", serif;
+}
+
+#main {
+    justify-content: center;
+    height: 100vh;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "belgrad", serif;
+    text-transform: uppercase;
+}
+
+#header-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "belgrad", serif;
+    text-transform: uppercase;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    width: 30%;
+    height: 20%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    border: 3px solid #C0B4A2;
+    background-color: #0B0A09;
+    color: #C0B4A2;
+    border-radius: 10px;
+    width: 50%;
+    height: 30%;
+    min-height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    flex-direction: column;
+}
+
+#card-not-hidden {
+    display: flex !important;
+}
+
+.card-inner {
+    background-color: inherit;
+    justify-content: center;
+    text-align: center;
+    font-size: 2rem;
+    margin: auto;
+    margin-left: 20px; margin-right: 20px;
+}
+
+.back {
+    background-color: #C0B4A2;
+}
+
+.button {
+    background-color: #0B0A09;
+    color: #C0B4A2;
+    border: 1px solid #C0B4A2;
+}
+
+.button-icon {
+    height: 100%;
+    width: 100%;
+}
+
+#forward-button {
+    height: 100%;
+    width: 30%;
+    border-radius: 5px;
+    font-size: 3rem;
+}
+
+#back-button {
+    height: 100%;
+    width: 30%;
+    border-radius: 5px;
+    font-size: 3rem;
+}
+
+#leave-button {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    width: 100px;
+    background-color: #0B0A09;
+    color: #C0B4A2;
+    border: 1px solid #C0B4A2;
+    text-align: center;
+}
+
+#left-spacer {
+    width: 100px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    width: 45%;
+    height: 10%;
+    font-size: 2rem;
+    font-family: "Philosopher", serif;
+    margin: 2.5%;
+    margin-bottom: 10px;
+    background-color: #0B0A09;
+    color: #C0B4A2;
+    border: 1px solid #C0B4A2;
+    text-align: center;
+}
+
+.input-button {
+    width: 45%;
+    height: 10%;
+    font-size: 2rem;
+    font-family: "Philosopher", serif;
+    margin: 2.5%;
+    margin-bottom: 10px;
+    background-color: #0B0A09;
+    color: #C0B4A2;
+    border: 1px solid #C0B4A2;
+    text-align: center;
+}
+
+.link {
+    width: 45%;
+    font-size: 2rem;
+    font-family: "Philosopher", serif;
+    display: block;
+    margin: 20px;
+    background-color: #0B0A09;
+    color: #C0B4A2;
+    border: 1px solid #C0B4A2;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.input-button:hover {
+    background-color: #C0B4A2;
+    color: #0B0A09;
+    border: 1px solid #0B0A09;
+}
+
+.button:hover {
+    background-color: #C0B4A2;
+    color: #0B0A09;
+    border: 1px solid #0B0A09;
+}
+
+.link:hover {
+    background-color: #C0B4A2;
+    color: #0B0A09;
+    border: 1px solid #0B0A09;
+}
+
+#leave-button:hover {
+    background-color: #C0B4A2;
+    color: #0B0A09;
+    border: 1px solid #0B0A09;
+}
+
+.button:active {
+    background-color: #c0b4a2e0;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}

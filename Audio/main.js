@@ -39,7 +39,7 @@ db.serialize(function() {
         if (err) console.error(err.message);
     });
     /*
-    db.all("DELETE FROM artists WHERE id=3");
+    db.all("DELETE FROM music WHERE id=5");
     */
 });
 

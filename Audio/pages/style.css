@@ -121,6 +121,32 @@ body {
     border-radius: 7px;
 }
 
+#album-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    background-color: #131313;
+    margin-bottom: 15px;
+}
+
+#album-header-art {
+    max-height: 150px;
+    margin: 10px;
+    border-radius: 7px;
+    width: auto; height: auto;
+}
+
+#audio-header-info {
+    color: #606060;
+    margin: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#album-title {
+    text-align: left;
+}
+
 .audio-title {
     margin: auto;
     margin-left: 10px;

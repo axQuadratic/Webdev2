@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title BusMapper: Configure
+        link(rel="stylesheet", href="style.css")
+    
+    body
+        include header.pug
+
+        div(id="content")
+            aside(id="left-menu")
+                button(id="component-selection", class="left-button") Component Selection
+                button(id="interface-map", class="left-button") Interface Map
+                button(id="power-map", class="left-button") Power Map
+
+                div(id="left-spacer")
+
+                h3(id="warnings") Warnings & Notes
+                p - No active warnings...
+
+            include component-selection.pug
