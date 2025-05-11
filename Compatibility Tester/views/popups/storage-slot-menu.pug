@@ -1,0 +1,22 @@
+div(id="storage-slot-menu")
+    div(class="cc-inner")
+        h2 Install Storage Where?
+
+    div(class="popup-menu")
+        - let i = 0
+        each slot in slots
+            div(class="component-container", id=slot.slot + "-" + i)
+                img(src="assets/components/default.png", class="cc-image")
+
+                div(class="cc-inner")
+                    h3= slot.name
+                    p Install Storage...
+
+            - i++
+
+    
+        div(class="component-container", onclick="window.location.href = '/config'")
+            img(src="assets/components/default.png", class="cc-image")
+
+            div(class="cc-inner")
+                h3 Back

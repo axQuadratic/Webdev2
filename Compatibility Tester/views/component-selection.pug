@@ -27,7 +27,7 @@ main
             h3 RAM
             p Select RAM...
 
-    div(class="component-container", id="storage")
+    div(class="component-container", id="storage", onclick="openPopup('storage_slots')")
         img(src="assets/components/default.png", class="cc-image")
         
         div(class="cc-inner")
@@ -41,34 +41,23 @@ main
             h3 Video Card
             p Select a Video Card...
 
-    div(id="storage-slot-menu")
-        h2 Install Storage Where?
+    div(class="component-container", id="case")
+        img(src="assets/components/default.png", class="cc-image")
+        
+        div(class="cc-inner")
+            h3 Case
+            p Select a Case...
 
-        div(class="component-container", id="gpu")
-            img(src="assets/components/default.png", class="cc-image")
-            
-            div(class="cc-inner")
-                h3 M.2 Slot 1 (PCIe Gen. 5)
-                p Install Storage...
+    div(class="component-container", id="additional-cooling", onclick="openPopup('additional_cooling')")
+        img(src="assets/components/default.png", class="cc-image")
+        
+        div(class="cc-inner")
+            h3 Additional Cooling
+            p Select Additional Cooling...
 
-        div(class="component-container", id="gpu")
-            img(src="assets/components/default.png", class="cc-image")
-            
-            div(class="cc-inner")
-                h3 M.2 Slot 2 (PCIe Gen. 4)
-                p Install Storage...
-
-
-        div(class="component-container", id="gpu")
-            img(src="assets/components/default.png", class="cc-image")
-            
-            div(class="cc-inner")
-                h3 SATA 1
-                p Install Storage...
-
-        div(class="component-container", id="gpu")
-            img(src="assets/components/default.png", class="cc-image")
-            
-            div(class="cc-inner")
-                h3 SATA 2
-                p Install Storage...
+    div(class="component-container", id="psu")
+        img(src="assets/components/default.png", class="cc-image")
+        
+        div(class="cc-inner")
+            h3 Power Supply
+            p Select a Power Supply...

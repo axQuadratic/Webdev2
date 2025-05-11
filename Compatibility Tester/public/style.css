@@ -65,7 +65,7 @@ main {
     column-gap: 5px;
     row-gap: 5px;
     width: calc(100vw - 26%);
-    height: calc(100vh - 140px);
+    height: calc(100vh - 145px);
 }
 
 .component-container {
@@ -91,16 +91,18 @@ main {
 }
 
 .cc-image {
-    height: 100%;
+    border-radius: 2px;
+    margin: 3px;
 }
 
-#storage-slot-menu {
-    display: none;
-    position: absolute;
-    width: 90vw;
-    height: 90vh;
-    margin: auto;
-    background-color: #ffffff;
-    padding: 5px;
-    border-radius: 3px;
+.popup-menu {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(10, 20%);
+    column-gap: 5px;
+    row-gap: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100vw - 10px);
+    height: calc(100vh - 200px);
 }
