@@ -98,4 +98,67 @@ async function initDatabase() {
     )`);
 }
 
-module.exports.initDatabase = () => { return initDatabase(); };
+async function getMotherboards() {
+    return await db.all("SELECT * FROM motherboard");
+}
+async function getCpus() {
+    return await db.all("SELECT * FROM cpu");
+}
+async function getCoolers() {
+    return await db.all("SELECT * FROM cpu_cooler");
+}
+async function getRam() {
+    return await db.all("SELECT * FROM ram");
+}
+async function getM2s() {
+    return await db.all("SELECT * FROM m2");
+}
+async function getSatas() {
+    return await db.all("SELECT * FROM sata");
+}
+async function getGpus() {
+    return await db.all("SELECT * FROM gpu");
+}
+async function getCases() {
+    return await db.all("SELECT * FROM pc_case");
+}
+async function getCaseFans() {
+    return await db.all("SELECT * FROM case_fan");
+}
+async function getPsus() {
+    return await db.all("SELECT * FROM psu");
+}
+
+async function getAllComponents() {
+    let components = {
+        "motherboard": [],
+        "cpu": [],
+        "cpu_cooler": [],
+        "ram": [],
+        "m2": [],
+        "sata": [],
+        "gpu": [],
+        "case": [],
+        "case_fan": [],
+        "psu": []
+    };
+
+    components.motherboard = await getMotherboards();
+    components.cpu = await getCpus();
+    components.cpu_cooler = await getCoolers();
+    components.ram = await getRam();
+    components.m2 = await getM2s();
+    components.sata = await getSatas();
+    components.gpu = await getGpus();
+    components.case = await getCases();
+    components.case_fan = await getCaseFans();
+    components.psu = await getPsus();
+
+    return components;
+}
+
+module.exports = {
+    initDatabase, getMotherboards, getCpus, getCoolers, getRam,
+    getM2s, getSatas, getGpus, getCases, getCaseFans, getPsus,
+    getAllComponents
+};

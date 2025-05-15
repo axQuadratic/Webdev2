@@ -69,8 +69,9 @@ main {
 }
 
 .component-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 20% 79%;
+    column-gap: 5px;
     background-color: #292b32;
     margin: 5px;
     width: 100%;
@@ -92,7 +93,9 @@ main {
 
 .cc-image {
     border-radius: 2px;
-    margin: 3px;
+    margin: auto;
+    width: 100px;
+    height: auto;
 }
 
 .popup-menu {
@@ -105,4 +108,33 @@ main {
     margin-right: auto;
     width: calc(100vw - 10px);
     height: calc(100vh - 200px);
+}
+
+#cookie-popup {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    top: calc(100% - 50px);
+    height: 50px;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+    background-color: #53555c;
+}
+
+#cookie-button {
+    margin: auto;
+    margin-right: 20px;
+    background-color: white;
+    color: black;
+    border: 1px black solid;
+    height: 30px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+#cookie-button:hover {
+    background-color: black;
+    color: white;
+    border: 1px white solid;
 }

@@ -41,9 +41,9 @@ function openPopup(type) {
         // case "case_fan":
         // case "psu":
         default:
-            xhr.open("POST", "/render/component-selection-menu");
+            xhr.open("POST", "/render/component-menu");
             xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xhr.send(JSON.stringify({ 
+            xhr.send(JSON.stringify({
                 "filter": type
             }));
     }

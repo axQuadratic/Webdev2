@@ -23,3 +23,7 @@ html(lang="en")
                 p - No active warnings...
 
             include component-selection.pug
+
+        div(id="cookie-popup")
+            p BusMapper uses cookies to provide site functionality. By using BusMapper, you agree to use of cookies.
+            button(id="cookie-button", onclick='document.getElementById("cookie-popup").style.display = "none"') OK
