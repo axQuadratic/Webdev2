@@ -99,34 +99,34 @@ async function initDatabase() {
 }
 
 async function getMotherboards() {
-    return await db.all("SELECT * FROM motherboard");
+    return await db.all("SELECT * FROM motherboard ORDER BY name");
 }
 async function getCpus() {
-    return await db.all("SELECT * FROM cpu");
+    return await db.all("SELECT * FROM cpu ORDER BY name");
 }
 async function getCoolers() {
-    return await db.all("SELECT * FROM cpu_cooler");
+    return await db.all("SELECT * FROM cpu_cooler ORDER BY name");
 }
 async function getRam() {
-    return await db.all("SELECT * FROM ram");
+    return await db.all("SELECT * FROM ram ORDER BY name");
 }
 async function getM2s() {
-    return await db.all("SELECT * FROM m2");
+    return await db.all("SELECT * FROM m2 ORDER BY name");
 }
 async function getSatas() {
-    return await db.all("SELECT * FROM sata");
+    return await db.all("SELECT * FROM sata ORDER BY name");
 }
 async function getGpus() {
-    return await db.all("SELECT * FROM gpu");
+    return await db.all("SELECT * FROM gpu ORDER BY name");
 }
 async function getCases() {
-    return await db.all("SELECT * FROM pc_case");
+    return await db.all("SELECT * FROM pc_case ORDER BY name");
 }
 async function getCaseFans() {
-    return await db.all("SELECT * FROM case_fan");
+    return await db.all("SELECT * FROM case_fan ORDER BY name");
 }
 async function getPsus() {
-    return await db.all("SELECT * FROM psu");
+    return await db.all("SELECT * FROM psu ORDER BY name");
 }
 
 async function getAllComponents() {

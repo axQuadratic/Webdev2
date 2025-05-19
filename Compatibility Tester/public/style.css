@@ -82,6 +82,17 @@ main {
     background-color: #33353c;
 }
 
+/*
+#additional-cooling {
+    grid-template-columns: 20% 59% 10%;
+}
+
+#fan-counter {
+    text-align: center;
+    pointer-events: none;
+}
+*/
+
 .cc-inner {
     margin-left: 10px;
 }
@@ -94,7 +105,7 @@ main {
 .cc-image {
     border-radius: 2px;
     margin: auto;
-    width: 100px;
+    width: 7vw;
     height: auto;
 }
 
@@ -137,4 +148,40 @@ main {
     background-color: black;
     color: white;
     border: 1px white solid;
+}
+
+#no-support-text {
+    display: none;
+    margin-left: 10px;
+}
+
+#no-space-text {
+    display: none;
+    margin-left: 10px;
+}
+
+@supports not (pointer-events: none) {
+    #content {
+        display: none;
+    }
+
+    #no-support-text {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #content {
+        display: none;
+    }
+
+    #no-space-text {
+        display: block;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    main {
+        height: fit-content;
+    }
 }

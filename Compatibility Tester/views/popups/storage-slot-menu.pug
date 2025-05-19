@@ -5,7 +5,7 @@ div(id="storage-slot-menu")
     div(class="popup-menu")
         - let i = 0
         each slot in slots
-            div(class="component-container", id=slot.slot + "-" + i)
+            div(class="component-container", id=slot.slot + "-" + i, onclick="openPopup('" + slot.slot + "')")
                 img(src="assets/components/default.png", class="cc-image")
 
                 div(class="cc-inner")
