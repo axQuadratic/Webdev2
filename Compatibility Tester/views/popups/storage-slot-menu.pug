@@ -1,11 +1,15 @@
+script(src="storage-script.js") 
+
 div(id="storage-slot-menu")
     div(class="cc-inner")
         h2 Install Storage Where?
 
     div(class="popup-menu")
         - let i = 0
+        - let slotCounts = { m2gen4: 0, m2gen5: 0, sata: 0 }
+
         each slot in slots
-            div(class="component-container", id=slot.slot + "-" + i, onclick="openPopup('" + slot.slot + "')")
+            div(class="component-container", id=slot.slot + "-" + i, onclick="openPopup('" + slot.slot + "-" + slotCounts[slot.slot] + "')")
                 img(src="assets/components/default.png", class="cc-image")
 
                 div(class="cc-inner")
@@ -13,8 +17,8 @@ div(id="storage-slot-menu")
                     p Install Storage...
 
             - i++
+            - slotCounts[slot.slot]++
 
-    
         div(class="component-container", onclick="window.location.href = '/config'")
             img(src="assets/components/back.png", class="cc-image")
 

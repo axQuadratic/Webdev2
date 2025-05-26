@@ -3,8 +3,19 @@ div(id="component-menu")
         h2= "Select a Component..."
 
     div(class="popup-menu")
-        each component in components[filter]
-            div(class="component-container", id=component.id)
+        - let modifiedFilter = filter
+        if filter.includes("m2gen5") || filter.includes("m2gen4")
+            - modifiedFilter = "m2"
+        else if filter.includes("sata")
+            - modifiedFilter = "sata"
+
+        each component in components[modifiedFilter]
+            - let onclick = "addComponent('" + filter + "', " + JSON.stringify(component) + ")"
+
+            if (filter.includes("m2") || filter.includes("sata"))
+                - onclick = "addStorage('" + filter + "', " + JSON.stringify(component) + ")"
+
+            div(class="component-container", id=component.id, onclick=onclick)
                 img(src="assets/components/" + component.image + ".png", class="cc-image")
 
                 div(class="cc-inner")

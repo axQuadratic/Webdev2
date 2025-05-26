@@ -6,7 +6,7 @@ html(lang="en")
         title BusMapper: Configure
         link(rel="stylesheet", href="style.css")
         link(rel="shortcut icon", href="assets/components/default.png", type="image/png")
-        script(src="script.js") 
+        script(src="script.js" defer) 
     
     body
         include header.pug
@@ -26,4 +26,4 @@ html(lang="en")
 
         div(id="cookie-popup")
             p BusMapper uses cookies to provide site functionality. By using BusMapper, you agree to use of cookies.
-            button(id="cookie-button", onclick='document.getElementById("cookie-popup").style.display = "none"') OK
+            button(id="cookie-button", onclick='acceptCookies()') OK
